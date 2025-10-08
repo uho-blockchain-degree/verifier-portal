@@ -5,7 +5,7 @@
   async function verify() {
     const payload = { studentName, nim, degree };
     try {
-      const res = await axios.post("http://localhost:3001/verify", payload);
+      const res = await axios.post("/api/verify", payload);
       result = JSON.stringify(res.data, null, 2);
     } catch (e) {
       result = e.message;
@@ -14,10 +14,50 @@
 </script>
 
 <div>
-  <h2>Verify Diploma</h2>
-  <input placeholder="Student Name" bind:value={studentName} />
-  <input placeholder="NIM" bind:value={nim} />
-  <input placeholder="Degree" bind:value={degree} />
-  <button on:click={verify}>Check</button>
-  <pre>{result}</pre>
+  
+  <h2 class="text-2xl font-semibold mb-4 text-gray-800">Verify Diploma</h2>
+
+<div class="bg-white shadow-md rounded-2xl p-6 max-w-md space-y-4 border border-gray-100">
+  <div>
+    <label class="block text-sm font-medium text-gray-700 mb-1">Student Name</label>
+    <input
+      type="text"
+      placeholder="Enter student name"
+      bind:value={studentName}
+      class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+    />
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium text-gray-700 mb-1">NIM</label>
+    <input
+      type="text"
+      placeholder="Enter NIM"
+      bind:value={nim}
+      class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+    />
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium text-gray-700 mb-1">Degree</label>
+    <input
+      type="text"
+      placeholder="Enter degree (e.g., B.Sc, M.Sc)"
+      bind:value={degree}
+      class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+    />
+  </div>
+
+  <button
+    on:click={verify}
+    class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors"
+  >
+    Check
+  </button>
+</div>
+
+{#if result}
+  <pre class="mt-6 bg-gray-100 text-sm p-4 rounded-lg text-gray-800 overflow-x-auto">{result}</pre>
+{/if}
+
 </div>

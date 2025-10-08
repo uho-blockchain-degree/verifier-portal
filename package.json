@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/uho-blockchain-degree/verifier-portal#readme",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite -- --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview"
   },
