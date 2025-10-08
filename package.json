@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/uho-blockchain-degree/verifier-portal.git"
@@ -16,5 +13,18 @@
   "bugs": {
     "url": "https://github.com/uho-blockchain-degree/verifier-portal/issues"
   },
-  "homepage": "https://github.com/uho-blockchain-degree/verifier-portal#readme"
+  "homepage": "https://github.com/uho-blockchain-degree/verifier-portal#readme",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "vite": "^7.1.9"
+  },
+  "dependencies": {
+    "axios": "^1.12.2",
+    "svelte": "^5.39.10"
+  }
 }
